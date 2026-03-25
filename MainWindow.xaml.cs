@@ -42,17 +42,18 @@ public partial class MainWindow : Window
             StackPanel stackPanel = new();
             Button characterButton = new()
             {
-                Height = 80,
-                Width = 400,
+                Height = 30,
+                Width = 300,
                 Margin = new Thickness(10),
                 Tag = characterFile // Store file path for json parsing step
             };
 
             string characterName = Path.GetFileNameWithoutExtension(characterFile);
+            string allyNameClean = characterName.Replace("_", " ");
             stackPanel.Children.Add(
                 new TextBlock
                 {
-                    Text = characterName,
+                    Text = allyNameClean,
                     HorizontalAlignment = HorizontalAlignment.Center
                 });
             characterButton.Content = stackPanel;
