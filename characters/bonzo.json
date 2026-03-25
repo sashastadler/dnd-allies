@@ -1,7 +1,7 @@
 {
-    "name": "Bonzo \"The Clown\"",
-    "description": "Bonzo is a delicate and unfortunate soul. Please do your best to protect him from the whims of fate. You will fail, but please do your best all the same.",
-    "HP": 15,
+    "Name": "Bonzo \"The Clown\"",
+    "Description": "Bonzo is a delicate and unfortunate soul. Please do your best to protect him from the whims of fate. You will fail, but please do your best all the same.",
+    "HpMax": 15,
     "AC": 18,
     "Speed": 30,
     "Immunities": ["frightened", "charmed", "psychic"],
