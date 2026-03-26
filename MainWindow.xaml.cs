@@ -82,12 +82,12 @@ public partial class MainWindow : Window
             }
         }
 
-        // For now, just show a message
-        MessageBox.Show($"Selected character: {characterName}");
-
-        //TODO: navigate to turn planning interface
-        // Open json from button.Tag
-        // NavigateToTurnPlanning(characterName);
+        // Navigate to ally window
+        if (button?.Tag is string characterFilePath)
+        {
+            var allyWindow = new AllyWindow(characterFilePath);
+            allyWindow.Show();
+        }
     }
 
     // Handle exit button
