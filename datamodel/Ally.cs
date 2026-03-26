@@ -11,6 +11,10 @@ public class Ally
 
     public int HpCurrent { get; set; } = 99;
 
+    public int Ac { get; set; } = 99;
+
+    public int Speed { get; set; } = 99;
+
     public string Name { get; set; } = "";
 
     public string Description { get; set; } = "";
