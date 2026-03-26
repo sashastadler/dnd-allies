@@ -15,6 +15,12 @@ public partial class AllyWindow : Window
         LoadAllyFromFile();
     }
 
+    // Initialize the ally info display
+    public void InitInfo()
+    {
+        this.Title = ally.Name;
+    }
+
     private void LoadAllyFromFile()
     {
         try
@@ -49,4 +55,31 @@ public partial class AllyWindow : Window
     {
         this.Close();
     }
+
+    /*
+        private void DamageButton_Click(object sender, RoutedEventArgs e)
+    {
+        if (ally.HpCurrent > 0)
+        {
+            // read input
+            // do dmg calc
+            // update HP
+            OnPropertyChanged();
+        }
+    }
+
+    private void HealButton_Click(object sender, RoutedEventArgs e)
+    {
+        if (ally.HpCurrent < ally.HpMax)
+        {
+            // read input
+            // update HP
+            OnPropertyChanged();
+        }
+    }
+
+    private void OnPropertyChanged()
+    {
+        //refresh HP display
+    } */
 }

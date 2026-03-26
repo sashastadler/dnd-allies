@@ -83,9 +83,10 @@ public partial class MainWindow : Window
         }
 
         // Navigate to ally window
-        if (button?.Tag is string characterFilePath)
+        if (button?.Tag is string filePath)
         {
-            var allyWindow = new AllyWindow(characterFilePath);
+            var allyWindow = new AllyWindow(filePath);
+            allyWindow.InitInfo();
             allyWindow.Show();
         }
     }
