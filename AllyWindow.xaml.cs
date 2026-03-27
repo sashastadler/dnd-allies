@@ -19,6 +19,11 @@ public partial class AllyWindow : Window
     public void InitInfo()
     {
         this.Title = ally.Name;
+        NameTextBlock.Text = ally.Name;
+        DescriptionTextBlock.Text = ally.Description;
+        AcTextBlock.Text = $"AC: {ally.Ac}";
+        ImmunitiesTextBlock.Text = $"Immunities: {string.Join(", ", ally.Immunities)}";
+        SpeedTextBlock.Text = $"Speed: {ally.Speed}";
     }
 
     private void LoadAllyFromFile()
