@@ -12,6 +12,7 @@ public partial class AllyWindow : Window
         _filepath = file;
         InitializeComponent();
         LoadAllyFromFile();
+        LoadAllyImage();
     }
 
     // Initialize the ally info display
@@ -44,13 +45,51 @@ public partial class AllyWindow : Window
                 ally.Apex = allyFile.Apex;
                 ally.HpCurrent = ally.HpMax;
             };
-            MessageBox.Show($"Loaded character {ally.Name}", "Loaded!", 
-                            MessageBoxButton.OK, MessageBoxImage.Information);
         }
         catch (Exception ex)
         {
             MessageBox.Show($"Error loading character data: {ex.Message}", "Error", 
                             MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+    }
+
+    private void LoadAllyImage()
+    {
+        try
+        {
+            // Get the image file name from the JSON file name
+            string allyName = Path.GetFileNameWithoutExtension(_filepath);
+            string imageDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "characters", "images");
+            string defaultImage = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images", "default.png");
+
+
+            // Try to find the image with the same name as the JSON file
+            string imageFile = Path.Combine(imageDirectory, allyName + ".png");
+            // If neither exists, use default image
+            if (!File.Exists(imageFile))
+            {
+                if (File.Exists(defaultImage))
+                {
+                    imageFile = defaultImage;
+                }
+                else
+                {
+                    // If no default image exists, show nothing
+                    return;
+                }
+            }
+            
+            // Set the image source
+            var image = new System.Windows.Media.Imaging.BitmapImage();
+            image.BeginInit();
+            image.UriSource = new Uri(imageFile);
+            image.EndInit();
+            
+            AllyImage.Source = image;
+        }
+        catch (Exception ex)
+        {
+            System.Diagnostics.Debug.WriteLine($"Error loading image: {ex.Message}");
         }
     }
 
