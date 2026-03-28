@@ -60,14 +60,26 @@ public partial class AllyWindow : Window
         this.Close();
     }
 
-    /*
-        private void DamageButton_Click(object sender, RoutedEventArgs e)
+    private void DamageButton_Click(object sender, RoutedEventArgs e)
     {
-        if (ally.HpCurrent > 0)
+        // check for valid input
+        if (int.TryParse(DamageInput.Text, out int damageAmount) && damageAmount >= 0)
         {
-            // read input
-            // do dmg calc
-            // update HP
+            int realDamage = damageAmount >= 10 ? 1 : 0;
+            if (ally.HpCurrent >= realDamage)
+            {
+                ally.HpCurrent -= realDamage;
+            }
+            else
+            {
+                ally.HpCurrent = 0;
+            }
+            UpdateAllyHealth();
+        }
+        else
+        {
+            MessageBox.Show("Please enter a number", "Invalid Input", 
+                        MessageBoxButton.OK, MessageBoxImage.Warning);
         }
     }
 
@@ -75,8 +87,32 @@ public partial class AllyWindow : Window
     {
         if (ally.HpCurrent < ally.HpMax)
         {
-            // read input
-            // update HP
+            // check for valid input
+            if (int.TryParse(DamageInput.Text, out int damageAmount) && damageAmount >= 0)
+            {
+                int realHealing = 0;
+                if (ally.HpCurrent == 0)
+                {
+                    realHealing = damageAmount / 10 > 0 ? damageAmount / 10 : 0;
+                    realHealing = realHealing < 3 && realHealing != 0 ? 3 : realHealing;
+                } else {
+                    realHealing = damageAmount / 10 > 0 ? damageAmount / 10 : 1;
+                }
+                if (ally.HpMax - ally.HpCurrent < realHealing)
+                { ally.HpCurrent = ally.HpMax; } else { ally.HpCurrent += realHealing; }
+                UpdateAllyHealth();
+            }
+            else
+            {
+                MessageBox.Show("Please enter a number", "Invalid Input", 
+                            MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            UpdateAllyHealth();
         }
-    } */
+    }
+
+    private void UpdateAllyHealth()
+    {
+        HpTextBlock.Text = $"{ally.HpCurrent}/{ally.HpMax}";
+    }
 }
