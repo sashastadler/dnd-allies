@@ -33,9 +33,9 @@
                 <TextBox Name="DamageInput" Width="100" Height="25" HorizontalAlignment="Center" 
                          Margin="5" Text="0"/>
                 <Button Name="DamageButton" Content="Take Damage" Width="80" Height="30" 
-                        HorizontalAlignment="Center" Margin="5" Click="DamageButton_Click"/>
+                        HorizontalAlignment="Center" Margin="5" Click="DamageButton_Click" Foreground="Red"/>
                 <Button Name="HealButton" Content="Heal" Width="80" Height="30" 
-                        HorizontalAlignment="Center" Margin="5" Click="HealButton_Click"/>
+                        HorizontalAlignment="Center" Margin="5" Click="HealButton_Click" Foreground="Green"/>
             </StackPanel>
         </Border>
 
