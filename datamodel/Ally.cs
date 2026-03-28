@@ -4,16 +4,20 @@ public class Ally
 {
     public Ally()
     {
+        Ac = 99;
+        Speed = 99;
+        Name = "";
+        HpMax = 99;
         HpCurrent = HpMax;
     }
 
-    public int HpMax { get; set; } = 99;
+    public int HpMax { get; set; }
 
-    public int HpCurrent { get; set; } = 99;
+    public int HpCurrent { get; set; }
 
-    public int Ac { get; set; } = 99;
+    public int Ac { get; set; }
 
-    public int Speed { get; set; } = 99;
+    public int Speed { get; set; }
 
     public string Name { get; set; } = "";
 

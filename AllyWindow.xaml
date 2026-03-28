@@ -13,16 +13,30 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
         
-        <TextBlock Name="NameTextBlock" Text="{Binding Name}" FontSize="16" FontWeight="Bold" Margin="10" Grid.Row="0"/>
-        <TextBlock Name="DescriptionTextBlock" Text="{Binding Description}" Margin="10" Grid.Row="1"/>
-        <TextBlock Name="AcTextBlock" Text="{Binding Ac}" Margin="10" Grid.Row="2"/>
-        <TextBlock Name="SpeedTextBlock" Text="{Binding Speed}" Margin="10" Grid.Row="3"/>
-        <TextBlock Name="ImmunitiesTextBlock" Text="{Binding Immunities}" Margin="10" Grid.Row="4"/>
+        <TextBlock Name="NameTextBlock" FontSize="24" FontWeight="Bold" Margin="10" HorizontalAlignment="Center"
+                Grid.Row="0" Grid.ColumnSpan="2" TextWrapping="Wrap"/>
+        <TextBlock Name="DescriptionTextBlock" Margin="10" Grid.Row="1" Grid.Column="0" TextWrapping="Wrap"/>
+        <TextBlock Name="AcTextBlock" Margin="10" Grid.Row="2" Grid.Column="0"/>
+        <TextBlock Name="SpeedTextBlock" Margin="10" Grid.Row="3" Grid.Column="0"/>
+        <TextBlock Name="ImmunitiesTextBlock" Margin="10" Grid.Row="4" Grid.Column="0" TextWrapping="Wrap"/>
+
+        <Border Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" BorderBrush="Gray" BorderThickness="2" 
+                Margin="10" Padding="10">
+            <StackPanel>
+                <TextBlock Name="HpTextBlock" FontSize="20" FontWeight="Bold" 
+                           HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Border>
+
 
         <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
             <Button Name="btnExit" Content="Exit" Height="30" Width="100" 
-                    Click="ExitButton_Click" Margin="5"/>
+                    Click="ExitButton_Click" Margin="5" Grid.ColumnSpan="2"/>
         </StackPanel>
     </Grid>
 </Window>

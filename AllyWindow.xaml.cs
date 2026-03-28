@@ -1,8 +1,7 @@
 ﻿using System.Windows;
-using System.Windows.Controls;
 using System.IO;
 using System.Text.Json;
-using System.Collections.Generic;
+
 namespace dnd_allies;
 public partial class AllyWindow : Window
 {
@@ -22,8 +21,9 @@ public partial class AllyWindow : Window
         NameTextBlock.Text = ally.Name;
         DescriptionTextBlock.Text = ally.Description;
         AcTextBlock.Text = $"AC: {ally.Ac}";
-        ImmunitiesTextBlock.Text = $"Immunities: {string.Join(", ", ally.Immunities)}";
         SpeedTextBlock.Text = $"Speed: {ally.Speed}";
+        ImmunitiesTextBlock.Text = $"Immunities: {string.Join(", ", ally.Immunities)}";
+        HpTextBlock.Text = $"{ally.HpCurrent}/{ally.HpMax}";
     }
 
     private void LoadAllyFromFile()
@@ -34,19 +34,18 @@ public partial class AllyWindow : Window
             var allyFile = JsonSerializer.Deserialize<Ally>(jsonContent);
             if (allyFile != null)
             {
-                ally = new Ally
-                {
-                    Name = allyFile.Name,
-                    Description = allyFile.Description,
-                    Immunities = allyFile.Immunities,
-                    HpMax = allyFile.HpMax,
-                    HpCurrent = allyFile.HpMax,
-                    Actions = allyFile.Actions,
-                    Apex = allyFile.Apex
-                };
+                ally.Name = allyFile.Name;
+                ally.Description = allyFile.Description;
+                ally.Speed = allyFile.Speed;
+                ally.Ac = allyFile.Ac;
+                ally.Immunities = allyFile.Immunities;
+                ally.HpMax = allyFile.HpMax;
+                ally.Actions = allyFile.Actions;
+                ally.Apex = allyFile.Apex;
+                ally.HpCurrent = ally.HpMax;
+            };
             MessageBox.Show($"Loaded character {ally.Name}", "Loaded!", 
                             MessageBoxButton.OK, MessageBoxImage.Information);
-            }
         }
         catch (Exception ex)
         {
@@ -69,7 +68,6 @@ public partial class AllyWindow : Window
             // read input
             // do dmg calc
             // update HP
-            OnPropertyChanged();
         }
     }
 
@@ -79,12 +77,6 @@ public partial class AllyWindow : Window
         {
             // read input
             // update HP
-            OnPropertyChanged();
         }
-    }
-
-    private void OnPropertyChanged()
-    {
-        //refresh HP display
     } */
 }
