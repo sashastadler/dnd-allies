@@ -1,4 +1,10 @@
 {
     "name": "Captain Carrot \"The King\" Ironfoundersson",
-    "description": "Captain Carrot Ironfoundersson (as seen in the Discworld series of books authored by Terry Pratchett) is a kind, honorable, strictly law-abiding, morally just policeman, which is how you know it's a fantasy series."
+    "description": "Captain Carrot Ironfoundersson (as seen in the Discworld series of books authored by Terry Pratchett) is a kind, honorable, strictly law-abiding, morally just policeman, which is how you know it's a fantasy series.",
+    "HpMax": 19,
+    "Ac": 21,
+    "Speed": 45,
+    "Immunities": ["frightened", "charmed"],
+    "Actions": [],
+    "Apex": null
 }
