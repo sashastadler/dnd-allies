@@ -1,3 +1,10 @@
 {
-    
+    "Name": "Orbital Command Platform \"The Big Guns\" #0007",
+    "Description": "The Orbital Command Platform #0007 is an engine of immense power, suspended in space above A'Tuin. (Hey, neat, there's space up there.) Running off the bones of an ancient godlike being, it is the most powerful artificial entity ever created. Also, you can call it “Mr. 7,” or OCP.",
+    "HpMax": 0,
+    "Ac": 0,
+    "Speed": 0,
+    "Immunities": ["all?"],
+    "Actions": [],
+    "Apex": null
 }
