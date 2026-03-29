@@ -1,0 +1,10 @@
+{
+    "Name": "Sergeant Ossuary \"The Man Of Faith\" Trook",
+    "Description": "Sergeant Ossuary Trook served in the Northern Campaign (you haven't heard of it) and was fatally wounded in a desperate battle (you haven't heard of it). On that day, his life was saved by a god (you haven't heard of them). For a while, he devoted his life to seeking out the god who saved him, hoping to find an end to war. Then he decided to cut out the middleman and end war himself.",
+    "HpMax": 18,
+    "Ac": 22,
+    "Speed": 30,
+    "Immunities": ["none"],
+    "Actions": [],
+    "Apex": null
+}

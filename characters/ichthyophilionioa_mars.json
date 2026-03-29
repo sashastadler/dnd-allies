@@ -1,0 +1,10 @@
+{
+    "Name": "Ichthyophilionioa \"The Normal Wizard\" Mars",
+    "Description": "Ichthyophilionioa Mars had to get up early for this, and she's not getting extra credit hours for participating in this study. So… can you just get on with it? A child prodigy wizard who, due to her unconventional homeschooling, can only use lightning spells.",
+    "HpMax": 12,
+    "Ac": 15,
+    "Speed": 30,
+    "Immunities": ["lightning", "thunder"],
+    "Actions": [],
+    "Apex": null
+}

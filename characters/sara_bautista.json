@@ -1,0 +1,10 @@
+{
+    "Name": "Sara \"The Freak\" Bautista",
+    "Description": "Sara's a freak. Her body ripples with potential, mutating and reshaping itself every second. At the slightest provocation, she can erupt into a monstrous form, ripping flesh, shattering bone… And she's gotta find a date before prom before Friday, too!",
+    "HpMax": 10,
+    "Ac": 16,
+    "Speed": 45,
+    "Immunities": ["none"],
+    "Actions": [],
+    "Apex": null
+}
