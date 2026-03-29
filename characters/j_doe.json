@@ -1,0 +1,10 @@
+{
+    "Name": "J. \"The Specter\" Doe",
+    "Description": "J. Doe: dead, and not that bothered about it. She's a ghost. She does ghost stuff.",
+    "HpMax": 0,
+    "Ac": 0,
+    "Speed": 45,
+    "Immunities": ["everything"],
+    "Actions": [],
+    "Apex": null
+}
