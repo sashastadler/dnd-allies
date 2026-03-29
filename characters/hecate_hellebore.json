@@ -1,0 +1,10 @@
+{
+    "Name": "Hecate \"The Gunpowder Witch\" Hellebore",
+    "Description": "A badass old grandma witch in sunglasses with three (four, actually, but 2 of them come as a pair) guns.",
+    "HpMax": 15,
+    "Ac": 17,
+    "Speed": 60,
+    "Immunities": ["thunder"],
+    "Actions": [],
+    "Apex": null
+}
