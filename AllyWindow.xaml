@@ -4,14 +4,14 @@
         Title="Ally Selection" Height="500" Width="400">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>  <!-- 0: Name -->
+            <RowDefinition Height="Auto"/>  <!-- 1: Description/Image -->
+            <RowDefinition Height="Auto"/>  <!-- 2: AC/HP -->
+            <RowDefinition Height="Auto"/>  <!-- 3: Speed -->
+            <RowDefinition Height="Auto"/>  <!-- 4: Immunities -->
+            <RowDefinition Height="*"/>     <!-- 5: Actions -->
+            <RowDefinition Height="Auto"/>  <!-- 6: Apex -->
+            <RowDefinition Height="Auto"/>  <!-- 7: Exit -->
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
