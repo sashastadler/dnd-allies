@@ -3,25 +3,17 @@ namespace dnd_allies;
 public class Ally
 {
     public Ally()
-    {
-        Ac = 99;
-        Speed = 99;
-        Name = "";
-        HpMax = 99;
-        HpCurrent = HpMax;
-    }
+    { }
 
-    public int HpMax { get; set; }
+    public Hp? Hp { get; set; } = null;
 
-    public int HpCurrent { get; set; }
+    public int Ac { get; set; } = Constants.DefaultAc;
 
-    public int Ac { get; set; }
+    public int Speed { get; set; } = Constants.DefaultSpeed;
 
-    public int Speed { get; set; }
+    public string Name { get; set; } = Constants.Empty;
 
-    public string Name { get; set; } = "";
-
-    public string Description { get; set; } = "";
+    public string Description { get; set; } = Constants.Empty;
 
     public List<Action> Actions { get; set; } = [];
 
