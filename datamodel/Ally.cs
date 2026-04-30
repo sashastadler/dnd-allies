@@ -5,7 +5,7 @@ public class Ally
     public Ally()
     { }
 
-    public Hp Hp {get; set; } = new Hp(Constants.DefaultMaxHp);
+    public Hp? Hp { get; set; } = null;
 
     public int Ac { get; set; } = Constants.DefaultAc;
 

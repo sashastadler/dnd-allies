@@ -24,7 +24,12 @@ public partial class AllyWindow : Window
         AcTextBlock.Text = $"AC: {ally.Ac}";
         SpeedTextBlock.Text = $"Speed: {ally.Speed}";
         ImmunitiesTextBlock.Text = $"Immunities: {string.Join(", ", ally.Immunities)}";
-        HpTextBlock.Text = $"{ally.Hp.Current}/{ally.Hp.Max}";
+        
+        if (ally.Hp != null)
+        {
+            HpTextBlock.Text = $"{ally.Hp.Current}/{ally.Hp.Max}";
+            HpBorder.Visibility = Visibility.Visible;
+        } else { HpBorder.Visibility = Visibility.Collapsed; }
     }
 
     private void LoadAllyFromFile()
@@ -36,7 +41,7 @@ public partial class AllyWindow : Window
             if (allyFile != null)
             {
                 ally = allyFile;
-                if (ally.Hp.Current == 0) { ally.Hp.Current = ally.Hp.Max; }
+                if (ally.Hp != null && ally.Hp.Current == 0) { ally.Hp.Current = ally.Hp.Max; }
             };
         }
         catch (Exception ex)
@@ -98,13 +103,13 @@ public partial class AllyWindow : Window
         if (int.TryParse(DamageInput.Text, out int damageAmount) && damageAmount >= 0)
         {
             int realDamage = damageAmount >= 10 ? 1 : 0;
-            if (ally.Hp.Current >= realDamage)
+            if (ally.Hp?.Current >= realDamage)
             {
-                ally.Hp.Current -= realDamage;
+                ally.Hp?.Current -= realDamage;
             }
             else
             {
-                ally.Hp.Current = 0;
+                ally.Hp?.Current = 0;
             }
             UpdateAllyHealth();
         }
@@ -117,7 +122,7 @@ public partial class AllyWindow : Window
 
     private void HealButton_Click(object sender, RoutedEventArgs e)
     {
-        if (ally.Hp.Current < ally.Hp.Max)
+        if (ally.Hp?.Current < ally.Hp?.Max)
         {
             // check for valid input
             if (int.TryParse(DamageInput.Text, out int damageAmount) && damageAmount >= 0)
@@ -144,6 +149,6 @@ public partial class AllyWindow : Window
 
     private void UpdateAllyHealth()
     {
-        HpTextBlock.Text = $"{ally.Hp.Current}/{ally.Hp.Max}";
+        HpTextBlock.Text = $"{ally.Hp?.Current}/{ally.Hp?.Max}";
     }
 }
