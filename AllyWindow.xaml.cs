@@ -24,7 +24,7 @@ public partial class AllyWindow : Window
         AcTextBlock.Text = $"AC: {ally.Ac}";
         SpeedTextBlock.Text = $"Speed: {ally.Speed}";
         ImmunitiesTextBlock.Text = $"Immunities: {string.Join(", ", ally.Immunities)}";
-        HpTextBlock.Text = $"{ally.HpCurrent}/{ally.HpMax}";
+        HpTextBlock.Text = $"{ally.Hp.Current}/{ally.Hp.Max}";
     }
 
     private void LoadAllyFromFile()
@@ -35,15 +35,8 @@ public partial class AllyWindow : Window
             var allyFile = JsonSerializer.Deserialize<Ally>(jsonContent);
             if (allyFile != null)
             {
-                ally.Name = allyFile.Name;
-                ally.Description = allyFile.Description;
-                ally.Speed = allyFile.Speed;
-                ally.Ac = allyFile.Ac;
-                ally.Immunities = allyFile.Immunities;
-                ally.HpMax = allyFile.HpMax;
-                ally.Actions = allyFile.Actions;
-                ally.Apex = allyFile.Apex;
-                ally.HpCurrent = ally.HpMax;
+                ally = allyFile;
+                if (ally.Hp.Current == 0) { ally.Hp.Current = ally.Hp.Max; }
             };
         }
         catch (Exception ex)
@@ -105,13 +98,13 @@ public partial class AllyWindow : Window
         if (int.TryParse(DamageInput.Text, out int damageAmount) && damageAmount >= 0)
         {
             int realDamage = damageAmount >= 10 ? 1 : 0;
-            if (ally.HpCurrent >= realDamage)
+            if (ally.Hp.Current >= realDamage)
             {
-                ally.HpCurrent -= realDamage;
+                ally.Hp.Current -= realDamage;
             }
             else
             {
-                ally.HpCurrent = 0;
+                ally.Hp.Current = 0;
             }
             UpdateAllyHealth();
         }
@@ -124,21 +117,20 @@ public partial class AllyWindow : Window
 
     private void HealButton_Click(object sender, RoutedEventArgs e)
     {
-        if (ally.HpCurrent < ally.HpMax)
+        if (ally.Hp.Current < ally.Hp.Max)
         {
             // check for valid input
             if (int.TryParse(DamageInput.Text, out int damageAmount) && damageAmount >= 0)
             {
-                int realHealing = 0;
-                if (ally.HpCurrent == 0)
+                int realHealing;
+                if (ally.Hp.Current == 0)
                 {
                     realHealing = damageAmount / 10 > 0 ? damageAmount / 10 : 0;
                     realHealing = realHealing < 3 && realHealing != 0 ? 3 : realHealing;
                 } else {
                     realHealing = damageAmount / 10 > 0 ? damageAmount / 10 : 1;
                 }
-                if (ally.HpMax - ally.HpCurrent < realHealing)
-                { ally.HpCurrent = ally.HpMax; } else { ally.HpCurrent += realHealing; }
+                ally.Hp.Modify(realHealing);
                 UpdateAllyHealth();
             }
             else
@@ -152,6 +144,6 @@ public partial class AllyWindow : Window
 
     private void UpdateAllyHealth()
     {
-        HpTextBlock.Text = $"{ally.HpCurrent}/{ally.HpMax}";
+        HpTextBlock.Text = $"{ally.Hp.Current}/{ally.Hp.Max}";
     }
 }
