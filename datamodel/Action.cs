@@ -11,5 +11,5 @@ public class Action
 
     public string Description { get; set; } = "";
 
-    public SavingThrow savingThrow { get; set; } = new SavingThrow();
+    public SavingThrow SavingThrow { get; set; } = new SavingThrow();
 }
