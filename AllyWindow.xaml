@@ -4,20 +4,22 @@
         Title="Ally Selection" Height="500" Width="400">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>  <!-- 0: Name -->
+            <RowDefinition Height="Auto"/>  <!-- 1: Description/Image -->
+            <RowDefinition Height="Auto"/>  <!-- 2: AC/HP -->
+            <RowDefinition Height="Auto"/>  <!-- 3: Speed -->
+            <RowDefinition Height="Auto"/>  <!-- 4: Immunities -->
+            <RowDefinition Height="Auto"/>  <!-- 5: Innate -->
+            <RowDefinition Height="*"/>     <!-- 6: Actions -->
+            <RowDefinition Height="Auto"/>  <!-- 7: Apex -->
+            <RowDefinition Height="Auto"/>  <!-- 8: Exit -->
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         
+        <!-- Standard ally information -->
         <TextBlock Name="NameTextBlock" FontSize="24" FontWeight="Bold" Margin="10" HorizontalAlignment="Center"
                 Grid.Row="0" Grid.ColumnSpan="2" TextWrapping="Wrap"/>
         <TextBlock Name="DescriptionTextBlock" Margin="10" Grid.Row="1" Grid.Column="0" TextWrapping="Wrap"/>
@@ -28,7 +30,8 @@
         <Image Name="AllyImage" Width="100" Height="100" HorizontalAlignment="Center" 
                Grid.Row="1" Grid.Column="1" Margin="5"/>
 
-        <Border Name="HpBorder" Grid.Row="2" Grid.Column="1" Grid.RowSpan="4" BorderBrush="Gray" BorderThickness="2" 
+        <!-- HP tracker - Rows 2-4 -->
+        <Border Name="HpBorder" Grid.Row="2" Grid.Column="1" Grid.RowSpan="3" BorderBrush="Gray" BorderThickness="2" 
                 Margin="10" Padding="10">
             <StackPanel>
                 <TextBlock Name="HpTextBlock" FontSize="20" FontWeight="Bold" 
@@ -42,6 +45,22 @@
             </StackPanel>
         </Border>
 
+        <!-- Actions section - Row 6 -->
+        <StackPanel Name="ActionsPanel" Grid.Row="6" Grid.ColumnSpan="2" Margin="10">
+            <TextBlock Text="Actions" FontWeight="Bold" Margin="0,0,0,4"/>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" MaxHeight="150">
+                <ItemsControl Name="ActionsItemsControl">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="0,4">
+                                <TextBlock FontWeight="Bold" Text="{Binding Name}"/>
+                                <TextBlock Text="{Binding Description}" TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </StackPanel>
 
         <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
             <Button Name="btnExit" Content="Exit" Height="30" Width="100" 

@@ -1,5 +1,12 @@
 namespace dnd_allies;
 
+public enum PoolType
+{
+    None,
+    Generic,
+    HP
+}
+
 public abstract class Pool
 {
     public int Max { get; set; }

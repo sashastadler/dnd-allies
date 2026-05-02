@@ -30,6 +30,9 @@ public partial class AllyWindow : Window
             HpTextBlock.Text = $"{ally.Hp.Current}/{ally.Hp.Max}";
             HpBorder.Visibility = Visibility.Visible;
         } else { HpBorder.Visibility = Visibility.Collapsed; }
+
+        ActionsPanel.Visibility = ally.Actions.Count == 0 ? Visibility.Collapsed : Visibility.Visible;
+        ActionsItemsControl.ItemsSource = ally.Actions;
     }
 
     private void LoadAllyFromFile()
@@ -97,6 +100,7 @@ public partial class AllyWindow : Window
         this.Close();
     }
 
+    // Handle HP tracking
     private void DamageButton_Click(object sender, RoutedEventArgs e)
     {
         // check for valid input
