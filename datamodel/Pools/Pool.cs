@@ -9,6 +9,8 @@ public enum PoolType
 
 public abstract class Pool
 {
+    public PoolType Type { get; set; }
+
     public int Max { get; set; }
 
     public int Min { get; set; }

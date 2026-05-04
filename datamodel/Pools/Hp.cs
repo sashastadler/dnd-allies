@@ -7,6 +7,7 @@ public class Hp : Pool
     public Hp () { }
     public Hp(int maxHp)
     {
+        Type = PoolType.HP;
         Min = Constants.DefaultMinHp;
         Max = maxHp;
         Current = Max;

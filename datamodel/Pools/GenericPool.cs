@@ -8,6 +8,10 @@ public class GenericPool : Pool
         Min = Constants.DefaultMinHp;
         Max = Constants.DefaultPoolSize;
         Current = Min;
+        Type = PoolType.Generic;
     }
+
+    public string Name { get; set; } = Constants.Empty;
     public override int ResetValue => Min;
+    public new void Modify(int amount) => Current = Math.Clamp(Current + amount, Min, Max);
 }

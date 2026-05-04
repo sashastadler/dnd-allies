@@ -54,6 +54,14 @@
                         <DataTemplate>
                             <StackPanel Margin="0,4">
                                 <TextBlock FontWeight="Bold" Text="{Binding Name}"/>
+                                <!-- Pool (Optional) -->
+                                <StackPanel Orientation="Horizontal" Margin="0,2" Loaded="PoolPanel_OnLoad" Tag="{Binding Pool}">
+                                    <TextBlock Text="{Binding Pool.Name}" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                                    <TextBlock Text="{Binding Pool.Current}" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                                    <Button Content="-" Tag="{Binding Pool}" Click="PoolSubtract_Click"/>
+                                    <TextBox Width="40" Margin="0,0,4,0"/>
+                                    <Button Content="+" Tag="{Binding Pool}" Click="PoolAdd_Click" Margin="0,0,2,0"/>
+                                </StackPanel>
                                 <TextBlock Text="{Binding Description}" TextWrapping="Wrap"/>
                             </StackPanel>
                         </DataTemplate>
