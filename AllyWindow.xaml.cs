@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.IO;
 using System.Text.Json;
+using System.Windows.Controls;
 
 namespace dnd_allies;
 public partial class AllyWindow : Window
@@ -37,10 +38,16 @@ public partial class AllyWindow : Window
 
     private void LoadAllyFromFile()
     {
+        // string enum converter to handle PoolType
+        var options = new JsonSerializerOptions
+        {
+            Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() }
+        };
+
         try
         {
             string jsonContent = File.ReadAllText(_filepath);
-            var allyFile = JsonSerializer.Deserialize<Ally>(jsonContent);
+            var allyFile = JsonSerializer.Deserialize<Ally>(jsonContent, options);
             if (allyFile != null)
             {
                 ally = allyFile;
@@ -154,5 +161,38 @@ public partial class AllyWindow : Window
     private void UpdateAllyHealth()
     {
         HpTextBlock.Text = $"{ally.Hp?.Current}/{ally.Hp?.Max}";
+    }
+
+    // Handle Pool updating
+    private void PoolPanel_OnLoad(object sender, RoutedEventArgs e)
+    {
+        var panel = (StackPanel)sender;
+        panel.Visibility = panel.Tag == null ? Visibility.Collapsed : Visibility.Visible;
+    }
+
+    private void PoolAdd_Click(object sender, RoutedEventArgs e)
+    {
+        var button = (Button)sender;
+        var pool = (Pool)button.Tag;
+        var panel = (StackPanel)button.Parent;
+        var input = panel.Children.OfType<TextBox>().First();
+        if (int.TryParse(input.Text, out int amount))
+        {
+            pool.Modify(amount);
+            panel.Children.OfType<TextBlock>().Skip(1).First().Text = pool.Current.ToString();
+        }
+    }
+
+    private void PoolSubtract_Click(object sender, RoutedEventArgs e)
+    {
+        var button = (Button)sender;
+        var pool = (Pool)button.Tag;
+        var panel = (StackPanel)button.Parent;
+        var input = panel.Children.OfType<TextBox>().First();
+        if (int.TryParse(input.Text, out int amount))
+        {
+            pool.Modify(-amount);
+            panel.Children.OfType<TextBlock>().Skip(1).First().Text = pool.Current.ToString();
+        }
     }
 }
