@@ -83,6 +83,7 @@ public partial class AllyWindow : Window
                 else
                 {
                     // If no default image exists, show nothing
+                    AllyImage.Visibility = Visibility.Collapsed;
                     return;
                 }
             }

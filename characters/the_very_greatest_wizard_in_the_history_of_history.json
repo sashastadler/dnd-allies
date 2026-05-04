@@ -1,0 +1,17 @@
+{
+    "Name": "The Very Greatest Wizard In The History Of History",
+    "Description": "Day Pholpfi",
+    "Hp": {
+        "Max": 6
+    },
+    "Ac": 21,
+    "Speed": 60,
+    "Immunities": ["none"],
+    "Actions": [
+        {
+            "Name": "Signature Spell",
+            "Description": "When you take this Hero Action, you cast one of the following spells. You can't cast the same spell two turns in a row.\n\nGreater Fireball\n\tA bead of fire streaks to a point you can see, then explodes. Every creature of your choice within a 200-foot radius takes 5d6+30 fire and 5d6+30 radiant damage. A creature can expend a Legendary Resistance to only take the fire damage.\n\nSilver Claw Strike\n\tYou brandish your silvered claws and strike. Make five melee spell attacks (+14 to hit) against any creature of your choice that you can see. On a hit, deal 6d10+15 force damage. Afterwards, teleport to any space you can see.\n\nHands of Day\n  Two clawed spectral hands appear. Choose two of the following effects:\n\t-Make a spell attack against a creature (+14). On a hit, deal 5d8+10 force damage.\n\t-Restrain a creature of your choice until the end of its next turn.\n\t-Gain a +5 to AC and saving throws until the start of your next turn.\n\nLesser Wish\n\tCast any spell of 8th level or lower, ignoring material components."
+        }
+    ],
+    "Apex": null
+}
