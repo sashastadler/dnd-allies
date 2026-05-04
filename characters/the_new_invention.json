@@ -1,0 +1,21 @@
+{
+    "Name": "The New Invention",
+    "Description": "D, and your old friend in a very high place.",
+    "Hp": {
+        "Max": 7
+    },
+    "Ac": 19,
+    "Speed": 100,
+    "Immunities": ["fire"],
+    "Actions": [
+        {
+            "Name": "Flurry of Iron",
+            "Description": "When you take this Hero Action, make an unarmed strike (+16 to hit) against an enemy within 15 feet. On a hit, deal 1d8+7 force damage for each point you beat their AC by (minimum of 1, maximum of 7)."
+        },
+        {
+            "Name": "Molten Defense",
+            "Description": "When you take this Hero Action, your speed becomes 0 and you and all allies within 5 feet of you gain immunity to all damage until the start of your next turn."
+        }
+    ],
+    "Apex": null
+}
