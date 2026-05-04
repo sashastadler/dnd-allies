@@ -1,0 +1,21 @@
+{
+    "Name": "The Wanderer",
+    "Description": "Quentin Thexius, Rhapsody-in-Light, Pickle, and the sword formerly known as Nightfall.",
+    "Hp": {
+        "Max": 8
+    },
+    "Ac": 17,
+    "Speed": 120,
+    "Immunities": ["radiant", "necrotic"],
+    "Actions": [
+        {
+            "Name": "InspiRATion",
+            "Description": "When you take this Hero Action, you direct Pickle to encourage an ally. Until the start of your next turn, they have a +12 to all rolls."
+        },
+        {
+            "Name": "Keshet, The Edge of Possibility",
+            "Description": "When you take this Hero Action, you direct Keshet, the Edge of Possibility to attack an enemy you can see within 60 feet. Roll 2d12+12. Keshet deals that much damage of a type it chooses (preferring vulnerabilities) and an ally you can see regains that many hit points."
+        }
+    ],
+    "Apex": null
+}
