@@ -62,9 +62,9 @@
             </ScrollViewer>
         </StackPanel>
 
-        <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+        <StackPanel Grid.Row="7" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
             <Button Name="btnExit" Content="Exit" Height="30" Width="100" 
-                    Click="ExitButton_Click" Margin="5" Grid.ColumnSpan="2"/>
+                    Click="ExitButton_Click" Margin="5"/>
         </StackPanel>
     </Grid>
 </Window>
