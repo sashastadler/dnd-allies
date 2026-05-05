@@ -32,6 +32,14 @@ public partial class AllyWindow : Window
             HpBorder.Visibility = Visibility.Visible;
         } else { HpBorder.Visibility = Visibility.Collapsed; }
 
+        if (ally.Innate != null)
+        {
+            InnateBorder.Visibility = Visibility.Visible;
+            InnateBorder.DataContext = ally.Innate;
+            InnateName.Text = ally.Innate.Name;
+            InnateDescription.Text = ally.Innate.Description;
+        } else { InnateBorder.Visibility = Visibility.Collapsed; }
+
         ActionsPanel.Visibility = ally.Actions.Count == 0 ? Visibility.Collapsed : Visibility.Visible;
         ActionsItemsControl.ItemsSource = ally.Actions;
     }

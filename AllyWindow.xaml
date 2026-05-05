@@ -45,6 +45,24 @@
             </StackPanel>
         </Border>
 
+        <!-- Innate ability - Row 5 -->
+        <Border Name="InnateBorder" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" BorderBrush="Gray" BorderThickness="1" 
+                Margin="10" Padding="10">
+            <StackPanel>
+                <TextBlock Text="Innate" FontWeight="Bold" Margin="0,0,0,4"/>
+                <TextBlock FontWeight="Bold" Name="InnateName"/>
+                <!-- Pool (Optional) -->
+                <StackPanel Orientation="Horizontal" Margin="0,2" Loaded="PoolPanel_OnLoad" Tag="{Binding Pool}">
+                    <TextBlock Text="{Binding Pool.Name}" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                    <TextBlock Text="{Binding Pool.Current}" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                    <Button Content="-" Tag="{Binding Pool}" Click="PoolSubtract_Click"/>
+                    <TextBox Width="40" Margin="0,0,4,0"/>
+                    <Button Content="+" Tag="{Binding Pool}" Click="PoolAdd_Click" Margin="0,0,2,0"/>
+                </StackPanel>
+                <TextBlock TextWrapping="Wrap" Name="InnateDescription"/>
+            </StackPanel>
+        </Border>
+
         <!-- Actions section - Row 6 -->
         <StackPanel Name="ActionsPanel" Grid.Row="6" Grid.ColumnSpan="2" Margin="10">
             <TextBlock Text="Actions" FontWeight="Bold" Margin="0,0,0,4"/>
@@ -70,6 +88,7 @@
             </ScrollViewer>
         </StackPanel>
 
+        <!-- Exit button -->
         <StackPanel Grid.Row="7" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
             <Button Name="btnExit" Content="Exit" Height="30" Width="100" 
                     Click="ExitButton_Click" Margin="5"/>
