@@ -59,7 +59,6 @@ Non-exhaustive list of updates I plan to make: (in not particular order) (⭐ = 
 - Speed optional (same as above)
 - Immunities should show "none" if no immunities are specified
 - Add Apex actions ⭐
-- Add Innate abilities ⭐
 - Fix some of the spacing/sizing
 - Add more allies
 - Add more ally pictures

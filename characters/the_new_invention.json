@@ -7,6 +7,15 @@
     "Ac": 19,
     "Speed": 100,
     "Immunities": ["fire"],
+    "Innate": {
+        "Name":"Backfire",
+        "Description":"When you would take damage of a type you are immune to, you store it. At the start of your turn, expend all stored damage to deal that much fire damage to all creatures of your choice within 60 feet.",
+        "Pool": {
+            "Type": "Generic",
+            "Name":"Stored Damage",
+            "Min": 0
+        }
+    },
     "Actions": [
         {
             "Name": "Flurry of Iron",

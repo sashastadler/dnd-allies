@@ -19,5 +19,7 @@ public class Ally
 
     public List<string> Immunities { get; set; } = [];
 
-    public ApexAction? Apex = null;
+    public ApexAction? Apex { get; set; } = null;
+
+    public Action? Innate { get; set; } = null;
 }

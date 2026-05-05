@@ -7,6 +7,10 @@
     "Ac": 17,
     "Speed": 120,
     "Immunities": ["radiant", "necrotic"],
+    "Innate": {
+        "Name": "Greatest Steed",
+        "Description": "You are mounted on Rhapsody, benefitting from their flying speed. One other ally of Small or Medium size can ride with you (mounting as a free action on their turn). You and your ally cannot be removed from Rhapsody's back against your will."
+    },
     "Actions": [
         {
             "Name": "InspiRATion",
