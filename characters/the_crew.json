@@ -4,6 +4,10 @@
     "Ac": 0,
     "Speed": 0,
     "Immunities": ["all"],
+    "Innate": {
+        "Name": "Captain's Orders",
+        "Description": "At the start of each round, you can issue one of the orders of your Captain's Hat. The effects of the order last until the end of the round, when you must issue a new order. When you issue the Retreat! order using this feature, you and any number of allies you can see teleport to any unoccupied space you can see."
+    },
     "Actions": [
         {
             "Name": "Crunge & Turge",
