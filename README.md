@@ -29,14 +29,14 @@ Optional fields that can be completely removed if not applicable to the ally:
     "Ac": 9999,
     "Speed": 9999,
     "Immunities": ["list", "any", "immunities", "here"],
+    "Innate": {
+        "Name": "Innate Name",
+        "Description": "Innate description"
+    },
     "Actions": [
         {
             "Name": "Action Name",
             "Description": "Action description.",
-            "SavingThrow": {
-                "Difficulty": 0,
-                "Skill": "None"
-            },
             "Pool": {
                 "Type": "Generic",
                 "Max": 10,

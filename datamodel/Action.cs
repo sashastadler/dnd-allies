@@ -11,8 +11,6 @@ public class Action
 
     public string Description { get; set; } = "";
 
-    public SavingThrow SavingThrow { get; set; } = new SavingThrow();
-
     [System.Text.Json.Serialization.JsonConverter(typeof(PoolJsonConverter))]
     public Pool? Pool { get; set; } = null;
 
