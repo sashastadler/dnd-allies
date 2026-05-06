@@ -8,5 +8,7 @@ public class Constants
 
     public const string Empty = "";
 
+    public const string DefaultImageName = "default.png";
+
     public const int DefaultPoolSize = 100;
 }

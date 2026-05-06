@@ -86,8 +86,7 @@ public partial class AllyWindow : Window
             // Get the image file name from the JSON file name
             string allyName = Path.GetFileNameWithoutExtension(_filepath);
             string imageDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "characters", "images");
-            string defaultImage = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images", "default.png");
-
+            string defaultImage = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images", Constants.DefaultImageName);
 
             // Try to find the image with the same name as the JSON file
             string imageFile = Path.Combine(imageDirectory, allyName + ".png");
