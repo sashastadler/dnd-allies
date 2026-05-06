@@ -29,7 +29,12 @@ public partial class AllyWindow : Window
         // Speed
         SpeedTextBlock.Visibility = ally.Speed == null ? Visibility.Collapsed : Visibility.Visible;
         SpeedTextBlock.Text = $"Speed: {ally.Speed}";
-        ImmunitiesTextBlock.Text = $"Immunities: {string.Join(", ", ally.Immunities)}";
+        // Immunities
+        if (ally.Ac != null || ally.Speed != null)
+        {
+            ally.Immunities = ally.Immunities.Count == 0 ? ["none"] : ally.Immunities;
+            ImmunitiesTextBlock.Text = $"Immunities: {string.Join(", ", ally.Immunities)}";
+        } else { ImmunitiesTextBlock.Visibility = Visibility.Collapsed; }
         // HP
         if (ally.Hp != null)
         {
