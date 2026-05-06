@@ -101,6 +101,7 @@ public partial class AllyWindow : Window
                 {
                     // If no default image exists, show nothing
                     AllyImage.Visibility = Visibility.Collapsed;
+                    AdjustSizes();
                     return;
                 }
             }
@@ -116,7 +117,16 @@ public partial class AllyWindow : Window
         catch (Exception ex)
         {
             System.Diagnostics.Debug.WriteLine($"Error loading image: {ex.Message}");
+            AllyImage.Visibility = Visibility.Collapsed;
+            AdjustSizes();
         }
+    }
+
+    private void AdjustSizes()
+    {
+        DescriptionTextBlock.SetValue(Grid.ColumnSpanProperty, 2);
+        AcTextBlock.SetValue(Grid.ColumnSpanProperty, 2);
+        ImmunitiesTextBlock.SetValue(Grid.ColumnSpanProperty, 2);
     }
 
     // Handle exit button
