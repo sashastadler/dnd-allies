@@ -4,12 +4,15 @@ public enum PoolType
 {
     None,
     Generic,
-    HP
+    HP,
+    Counter
 }
 
 public abstract class Pool
 {
     public PoolType Type { get; set; }
+
+    public string Name { get; set; } = Constants.Empty;
 
     public int Max { get; set; }
 
@@ -19,7 +22,7 @@ public abstract class Pool
 
     public abstract int ResetValue { get; }
 
-    public void Modify(int amount) => Current += amount;
+    public void Modify(int amount) => Current = Math.Clamp(Current + amount, Min, Max);
 
     public void Reset() => Current = ResetValue;
 }

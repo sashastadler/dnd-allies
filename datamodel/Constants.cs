@@ -10,5 +10,5 @@ public class Constants
 
     public const string DefaultImageName = "default.png";
 
-    public const int DefaultPoolSize = 100;
+    public const int DefaultPoolSize = 1000;
 }

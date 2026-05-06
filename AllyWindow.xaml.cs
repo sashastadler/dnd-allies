@@ -54,6 +54,7 @@ public partial class AllyWindow : Window
         ActionsItemsControl.ItemsSource = ally.Actions;
     }
 
+    // Loads the Ally information
     private void LoadAllyFromFile()
     {
         // string enum converter to handle PoolType
@@ -207,6 +208,10 @@ public partial class AllyWindow : Window
         if (int.TryParse(input.Text, out int amount))
         {
             pool.Modify(amount);
+            panel.Children.OfType<TextBlock>().Skip(1).First().Text = pool.Current.ToString();
+        } else if (pool.Type == PoolType.Counter)
+        {
+            pool.Modify(amount: 1);
             panel.Children.OfType<TextBlock>().Skip(1).First().Text = pool.Current.ToString();
         }
     }

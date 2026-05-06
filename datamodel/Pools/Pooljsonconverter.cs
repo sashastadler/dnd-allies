@@ -18,6 +18,7 @@ public class PoolJsonConverter : JsonConverter<Pool>
         return poolType switch
         {
             PoolType.HP => JsonSerializer.Deserialize<Hp>(root.GetRawText(), options),
+            PoolType.Counter => JsonSerializer.Deserialize<CounterPool>(root.GetRawText(), options),
             PoolType.Generic => JsonSerializer.Deserialize<GenericPool>(root.GetRawText(), options),
             _ => null
         };
