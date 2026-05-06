@@ -88,8 +88,21 @@
             </ScrollViewer>
         </StackPanel>
 
+        <!-- Apex - Row 7 -->
+        <Border Name="ApexBorder" Grid.Row="7" Grid.ColumnSpan="2" BorderBrush="Gray" BorderThickness="1"
+        Margin="10" Padding="10">
+            <StackPanel Name="ApexPanel">
+                <TextBlock Text="Apex Action" FontWeight="Bold" FontSize="14" Margin="0,0,0,4"/>
+                <TextBlock Name="ApexName" FontWeight="Bold"/>
+                <TextBlock Name="ApexFlavorText" TextWrapping="Wrap" FontStyle="Italic" FontSize="10"/>
+                <TextBlock Name="ApexDescription" TextWrapping="Wrap"/>
+                <Button Name="ApexButton" Content="Use" HorizontalAlignment="Left"
+                        Margin="0,6,0,0" Click="ApexButton_Click"/>
+            </StackPanel>
+        </Border>
+
         <!-- Exit button -->
-        <StackPanel Grid.Row="7" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+        <StackPanel Grid.Row="8" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
             <Button Name="btnExit" Content="Exit" Height="30" Width="100" 
                     Click="ExitButton_Click" Margin="5"/>
         </StackPanel>
