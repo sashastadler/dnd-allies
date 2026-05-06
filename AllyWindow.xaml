@@ -22,7 +22,7 @@
         <!-- Standard ally information -->
         <TextBlock Name="NameTextBlock" FontSize="24" FontWeight="Bold" Margin="10" HorizontalAlignment="Center"
                 Grid.Row="0" Grid.ColumnSpan="2" TextWrapping="Wrap"/>
-        <TextBlock Name="DescriptionTextBlock" Margin="10" Grid.Row="1" Grid.Column="0" TextWrapping="Wrap"/>
+        <TextBlock Name="DescriptionTextBlock" Margin="10" Grid.Row="1" Grid.Column="0" FontStyle="Italic" TextWrapping="Wrap"/>
         <TextBlock Name="AcTextBlock" Margin="10" Grid.Row="2" Grid.Column="0"/>
         <TextBlock Name="SpeedTextBlock" Margin="10" Grid.Row="3" Grid.Column="0" TextWrapping="Wrap"/>
         <TextBlock Name="ImmunitiesTextBlock" Margin="10" Grid.Row="4" Grid.Column="0" TextWrapping="Wrap"/>
