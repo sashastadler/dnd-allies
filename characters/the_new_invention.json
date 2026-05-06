@@ -25,5 +25,9 @@
             "Description": "When you take this Hero Action, your speed becomes 0 and you and all allies within 5 feet of you gain immunity to all damage until the start of your next turn."
         }
     ],
-    "Apex": null
+    "Apex": {
+        "Name": "Father of All Fire",
+        "FlavorText": "The One That Was Made walks the earth no more. All those they held dear will never see their face again, nor be held in their arms. Their loss is the loss of a foundation, the steadiness that held their allies, friends and family up.\n\nThe Penitent of Iron, that original warrior who led the charge against the Serpent in immemorial time, is gone. He quit divinity, laid it down, and went away in search of some other immortal reward, leaving his followers who he had so long tended.\n\nAnd yet: ask O.T.W.M.'s children and the Penitent's priests if their father is with them, and they will respond with a smile warm as fire and a “Yes.” as solid as iron.\n\nAnd they share one more thing, them and you: a righteousness unshakeable as faith, and a vengeful fury burning hotter than the sun.",
+        "Description": "When you take this Hero Action, the AC of all enemies decreases by 10 and the AC of all allies increases by 10. The next time each ally hits an enemy with a weapon attack, the attack's damage is doubled. The effects of this Hero Action last until the start of your next turn."
+    }
 }

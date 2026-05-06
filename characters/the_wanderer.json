@@ -21,5 +21,9 @@
             "Description": "When you take this Hero Action, you direct Keshet, the Edge of Possibility to attack an enemy you can see within 60 feet. Roll 2d12+12. Keshet deals that much damage of a type it chooses (preferring vulnerabilities) and an ally you can see regains that many hit points."
         }
     ],
-    "Apex": null
+    "Apex": {
+        "Name": "Self-Titled",
+        "FlavorText": "They said: Quentin Thexius, you can't be a bard anymore. You lost it. You can't play the Song of Creation like you used to.\nThey said: Quentin Thexius, you can't be an angel anymore. You lost it. You let your god go to rest. \nThey said: Quentin Thexius, you can't be a hero anymore. You lost it. You never really had it, anyway.\nThey said: so what are you gonna be, Quentin Thexius?\nYou said: I'll be Quentin Thexius.",
+        "Description": "When you take this Heroic Action, every ally gains a benefit of their choice from the following options:\n\t-All damage they deal is doubled until the start of your next turn.\n\t-They are restored to full health.\n\t-They regain all expended spell slots, class features, and item charges."
+    }
 }

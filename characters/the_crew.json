@@ -21,5 +21,9 @@
             }
         }
     ],
-    "Apex": null
+    "Apex": {
+        "Name": "Cataclysm",
+        "FlavorText": "From the moment you set sail, something within you has been building. A roaring fire, a biting frost, a crashing wave. Perhaps the Sea-God did not plant the storm in your soul. Perhaps it only revealed it. You face pure apotheosis, the wellspring of divinity, the source of power from which every god was born.\n\nWhat's a god to a raging storm?",
+        "Description": "When you take this Hero Action, you empower your weapon attacks until the end of your next turn. When your empowered attacks deal damage, they deal additional cold, fire, and lightning damage equal to the damage dealt."
+    }
 }
