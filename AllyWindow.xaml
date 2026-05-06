@@ -22,7 +22,7 @@
         <!-- Standard ally information -->
         <TextBlock Name="NameTextBlock" FontSize="24" FontWeight="Bold" Margin="10" HorizontalAlignment="Center"
                 Grid.Row="0" Grid.ColumnSpan="2" TextWrapping="Wrap"/>
-        <TextBlock Name="DescriptionTextBlock" Margin="10" Grid.Row="1" Grid.Column="0" TextWrapping="Wrap"/>
+        <TextBlock Name="DescriptionTextBlock" Margin="10" Grid.Row="1" Grid.Column="0" FontStyle="Italic" TextWrapping="Wrap"/>
         <TextBlock Name="AcTextBlock" Margin="10" Grid.Row="2" Grid.Column="0"/>
         <TextBlock Name="SpeedTextBlock" Margin="10" Grid.Row="3" Grid.Column="0" TextWrapping="Wrap"/>
         <TextBlock Name="ImmunitiesTextBlock" Margin="10" Grid.Row="4" Grid.Column="0" TextWrapping="Wrap"/>
@@ -49,7 +49,7 @@
         <Border Name="InnateBorder" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" BorderBrush="Gray" BorderThickness="1" 
                 Margin="10" Padding="10">
             <StackPanel>
-                <TextBlock Text="Innate" FontWeight="Bold" Margin="0,0,0,4"/>
+                <TextBlock Text="Innate" FontWeight="Bold" FontSize="14" Margin="0,0,0,4"/>
                 <TextBlock FontWeight="Bold" Name="InnateName"/>
                 <!-- Pool (Optional) -->
                 <StackPanel Orientation="Horizontal" Margin="0,2" Loaded="PoolPanel_OnLoad" Tag="{Binding Pool}">
@@ -65,7 +65,7 @@
 
         <!-- Actions section - Row 6 -->
         <StackPanel Name="ActionsPanel" Grid.Row="6" Grid.ColumnSpan="2" Margin="10">
-            <TextBlock Text="Actions" FontWeight="Bold" Margin="0,0,0,4"/>
+            <TextBlock Text="Actions" FontWeight="Bold" FontSize="14" Margin="0,0,0,4"/>
             <ScrollViewer VerticalScrollBarVisibility="Auto" MaxHeight="200">
                 <ItemsControl Name="ActionsItemsControl">
                     <ItemsControl.ItemTemplate>
@@ -74,11 +74,11 @@
                                 <TextBlock FontWeight="Bold" Text="{Binding Name}"/>
                                 <!-- Pool (Optional) -->
                                 <StackPanel Orientation="Horizontal" Margin="0,2" Loaded="PoolPanel_OnLoad" Tag="{Binding Pool}">
-                                    <TextBlock Text="{Binding Pool.Name}" VerticalAlignment="Center" Margin="0,0,6,0"/>
-                                    <TextBlock Text="{Binding Pool.Current}" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                                    <TextBlock Text="{Binding Pool.Name}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                    <TextBlock Text="{Binding Pool.Current}" VerticalAlignment="Center" Margin="0,0,5,0"/>
                                     <Button Content="-" Tag="{Binding Pool}" Click="PoolSubtract_Click"/>
-                                    <TextBox Width="40" Margin="0,0,4,0"/>
-                                    <Button Content="+" Tag="{Binding Pool}" Click="PoolAdd_Click" Margin="0,0,2,0"/>
+                                    <TextBox Width="30"/>
+                                    <Button Content="+" Tag="{Binding Pool}" Click="PoolAdd_Click"/>
                                 </StackPanel>
                                 <TextBlock Text="{Binding Description}" TextWrapping="Wrap"/>
                             </StackPanel>
@@ -88,8 +88,21 @@
             </ScrollViewer>
         </StackPanel>
 
+        <!-- Apex - Row 7 -->
+        <Border Name="ApexBorder" Grid.Row="7" Grid.ColumnSpan="2" BorderBrush="Gray" BorderThickness="1"
+        Margin="10" Padding="10">
+            <StackPanel Name="ApexPanel">
+                <TextBlock Text="Apex Action" FontWeight="Bold" FontSize="14" Margin="0,0,0,4"/>
+                <TextBlock Name="ApexName" FontWeight="Bold"/>
+                <TextBlock Name="ApexFlavorText" TextWrapping="Wrap" FontStyle="Italic" FontSize="10"/>
+                <TextBlock Name="ApexDescription" TextWrapping="Wrap"/>
+                <Button Name="ApexButton" Content="Use" HorizontalAlignment="Left"
+                        Margin="0,6,0,0" Click="ApexButton_Click"/>
+            </StackPanel>
+        </Border>
+
         <!-- Exit button -->
-        <StackPanel Grid.Row="7" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+        <StackPanel Grid.Row="8" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
             <Button Name="btnExit" Content="Exit" Height="30" Width="100" 
                     Click="ExitButton_Click" Margin="5"/>
         </StackPanel>

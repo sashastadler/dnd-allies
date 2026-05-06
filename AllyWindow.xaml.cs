@@ -52,6 +52,15 @@ public partial class AllyWindow : Window
         // Actions
         ActionsPanel.Visibility = ally.Actions.Count == 0 ? Visibility.Collapsed : Visibility.Visible;
         ActionsItemsControl.ItemsSource = ally.Actions;
+        // Apex
+        if (ally.Apex != null)
+        {
+            ApexName.Text = ally.Apex.Name;
+            ApexFlavorText.Text = ally.Apex.FlavorText;
+            if (ally.Apex.FlavorText == Constants.Empty) { ApexFlavorText.Visibility = Visibility.Collapsed; }
+            ApexDescription.Text = ally.Apex.Description;
+            ApexBorder.Visibility = Visibility.Visible;
+        } else { ApexBorder.Visibility = Visibility.Collapsed; }
     }
 
     // Loads the Ally information
@@ -226,6 +235,22 @@ public partial class AllyWindow : Window
         {
             pool.Modify(-amount);
             panel.Children.OfType<TextBlock>().Skip(1).First().Text = pool.Current.ToString();
+        }
+    }
+
+    // Handle Apex use
+    private void ApexButton_Click(object sender, RoutedEventArgs e)
+    {
+        if (ally.Apex != null && ally.Apex.CanUse)
+        {
+            ally.Apex.Use();
+            ApexButton.IsEnabled = false;
+            ApexButton.Content = "Used";
+            System.Windows.Media.SolidColorBrush gray = System.Windows.Media.Brushes.Gray;
+            var button = (Button)sender;
+            var panel = (StackPanel)button.Parent;
+            foreach (var block in panel.Children.OfType<TextBlock>()){ block.Foreground = gray; }
+            ApexBorder.BorderBrush = gray;
         }
     }
 }

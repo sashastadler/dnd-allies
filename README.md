@@ -43,16 +43,19 @@ Optional fields that can be completely removed if not applicable to the ally:
         },
         {
             "Name": "Simple Action",
-            "Description": "This action has no pool or saving throw."
+            "Description": "This action has no pool."
         }
     ],
-    "Apex": null
+    "Apex": {
+        "Name": "APEX",
+        "FlavorText": "This will be in italics"
+        "Description": "Apex action description"
+    }
 }
 ```
 
 ## Future Improvements
 Non-exhaustive list of updates I plan to make: (in not particular order) (⭐ = priority)
-- Add Apex actions ⭐
 - Fix some of the spacing/sizing
 - Add more allies
 - Add more ally pictures
