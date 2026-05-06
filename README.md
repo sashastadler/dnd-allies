@@ -16,6 +16,9 @@ Here is a template. Copy and paste this into a new file. Edit values as needed. 
 
 Optional fields that can be completely removed if not applicable to the ally: 
 - HP
+- AC
+- Speed
+- Immunities (if no AC or Speed are provided, no immunities will be displayed.)
 - Pool (if an Action doesn't have a pool (most don't))
 - SavingThrow
 - Actions (if no actions).
@@ -55,11 +58,8 @@ Optional fields that can be completely removed if not applicable to the ally:
 
 ## Future Improvements
 Non-exhaustive list of updates I plan to make: (in not particular order) (⭐ = priority)
-- AC optional (for allies with no AC) - currently AC will always display
-- Speed optional (same as above)
 - Immunities should show "none" if no immunities are specified
 - Add Apex actions ⭐
 - Fix some of the spacing/sizing
 - Add more allies
 - Add more ally pictures
-- Innate abilities with a Pool that counts up/down (for those characters that store the damage they take/deal, for example)

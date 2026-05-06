@@ -19,19 +19,24 @@ public partial class AllyWindow : Window
     // Initialize the ally info display
     public void InitInfo()
     {
+        // Name, Desc, window title
         this.Title = ally.Name;
         NameTextBlock.Text = ally.Name;
         DescriptionTextBlock.Text = ally.Description;
+        // AC
+        AcTextBlock.Visibility = ally.Ac == null ? Visibility.Collapsed : Visibility.Visible;
         AcTextBlock.Text = $"AC: {ally.Ac}";
+        // Speed
+        SpeedTextBlock.Visibility = ally.Speed == null ? Visibility.Collapsed : Visibility.Visible;
         SpeedTextBlock.Text = $"Speed: {ally.Speed}";
         ImmunitiesTextBlock.Text = $"Immunities: {string.Join(", ", ally.Immunities)}";
-        
+        // HP
         if (ally.Hp != null)
         {
             HpTextBlock.Text = $"{ally.Hp.Current}/{ally.Hp.Max}";
             HpBorder.Visibility = Visibility.Visible;
         } else { HpBorder.Visibility = Visibility.Collapsed; }
-
+        // Innate
         if (ally.Innate != null)
         {
             InnateBorder.Visibility = Visibility.Visible;
@@ -39,7 +44,7 @@ public partial class AllyWindow : Window
             InnateName.Text = ally.Innate.Name;
             InnateDescription.Text = ally.Innate.Description;
         } else { InnateBorder.Visibility = Visibility.Collapsed; }
-
+        // Actions
         ActionsPanel.Visibility = ally.Actions.Count == 0 ? Visibility.Collapsed : Visibility.Visible;
         ActionsItemsControl.ItemsSource = ally.Actions;
     }

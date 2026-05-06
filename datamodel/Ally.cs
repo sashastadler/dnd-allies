@@ -7,9 +7,9 @@ public class Ally
 
     public Hp? Hp { get; set; } = null;
 
-    public int Ac { get; set; } = Constants.DefaultAc;
+    public int? Ac { get; set; } = null;
 
-    public int Speed { get; set; } = Constants.DefaultSpeed;
+    public string? Speed { get; set; } = null;
 
     public string Name { get; set; } = Constants.Empty;
 

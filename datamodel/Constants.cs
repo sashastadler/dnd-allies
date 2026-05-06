@@ -6,10 +6,6 @@ public class Constants
 
     public const int DefaultMinHp = 0;
 
-    public const int DefaultSpeed = 30;
-
-    public const int DefaultAc = 10;
-
     public const string Empty = "";
 
     public const int DefaultPoolSize = 100;
