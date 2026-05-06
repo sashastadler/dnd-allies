@@ -5,7 +5,7 @@
         "Max": 7
     },
     "Ac": 19,
-    "Speed": 100,
+    "Speed": "100ft (including vertical surfaces and liquids)",
     "Immunities": ["fire"],
     "Innate": {
         "Name":"Backfire",

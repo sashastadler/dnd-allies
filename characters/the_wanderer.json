@@ -5,7 +5,7 @@
         "Max": 8
     },
     "Ac": 17,
-    "Speed": 120,
+    "Speed": "120ft (flying)",
     "Immunities": ["radiant", "necrotic"],
     "Innate": {
         "Name": "Greatest Steed",

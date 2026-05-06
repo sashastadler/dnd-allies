@@ -5,8 +5,7 @@
         "Max": 6
     },
     "Ac": 21,
-    "Speed": 60,
-    "Immunities": ["none"],
+    "Speed": "60ft (walking, climbing)",
     "Innate": {
         "Name": "Day's Bond of Friendship",
         "Description": "Your psychic bond connects your companions. When an ally makes a saving throw, they use the highest bonus for that saving throw across all allies."

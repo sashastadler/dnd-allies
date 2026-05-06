@@ -1,8 +1,6 @@
 {
     "Name": "The Crew",
     "Description": "Turge, Lobrick, Hillary, Skid, Hognath, Sasa, Hammock, Rocks, Hidebehind, Sam Cobb, Tuille, Pit, Covey, Scarr, Rum, and, of course, The Rockrose herself.",
-    "Ac": 0,
-    "Speed": 0,
     "Immunities": ["all"],
     "Innate": {
         "Name": "Captain's Orders",
