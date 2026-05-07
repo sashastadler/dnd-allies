@@ -16,6 +16,7 @@ Here is a template. Copy and paste this into a new file. Edit values as needed. 
 
 Optional fields that can be completely removed if not applicable to the ally:
 - All of them
+
 ```
 {
     "Name": "Ally Name",
@@ -33,13 +34,23 @@ Optional fields that can be completely removed if not applicable to the ally:
     "Actions": [
         {
             "Name": "Action Name",
-            "Description": "Action description.",
+            "Description": "Action description. This action has sub options to pick from.",
             "Pool": {
                 "Type": "Generic",
                 "Max": 10,
                 "Min": 0,
                 "Current": 0
-            }
+            },
+            "SubOptions": [
+                {
+                    "Name": "Option 1",
+                    "Description": "Description"
+                },
+                {
+                    "Name": "Option 2",
+                    "Description": "Description"
+                }
+            ]
         },
         {
             "Name": "Simple Action",
@@ -59,3 +70,4 @@ Non-exhaustive list of updates I plan to make: (in not particular order) (⭐ = 
 - Fix some of the spacing/sizing
 - Add more allies
 - Add more ally pictures
+- CounterPool should not show input text box ideally

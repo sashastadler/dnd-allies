@@ -201,6 +201,13 @@ public partial class AllyWindow : Window
         HpTextBlock.Text = $"{ally.Hp?.Current}/{ally.Hp?.Max}";
     }
 
+    // Handle action sub options
+    private void SubOptionsPanel_OnLoad(object sender, RoutedEventArgs e)
+    {
+        var control = (ItemsControl)sender;
+        control.Visibility = control.Items.Count == 0 ? Visibility.Collapsed : Visibility.Visible;
+    }
+
     // Handle Pool updating
     private void PoolPanel_OnLoad(object sender, RoutedEventArgs e)
     {

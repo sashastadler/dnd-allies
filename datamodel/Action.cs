@@ -14,4 +14,5 @@ public class Action
     [System.Text.Json.Serialization.JsonConverter(typeof(PoolJsonConverter))]
     public Pool? Pool { get; set; } = null;
 
+    public List<Action> SubOptions { get; set; } = [];
 }
