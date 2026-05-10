@@ -13,12 +13,26 @@
         },
         {
             "Name": "Crew Specialty",
-            "Description": "When you take this Hero Action, raise your Crew Counter by 1, then activate one of the Crew Specialties listed below. Then, if the Specialty activated is different from the one you activated last turn, raise the Crew Counter again. \n\n Hillary's Hustle\n\tHop to it, and quick! Your allies gain X times 5 feet of movement speed on their next turn.\n\nHognath's Barrage\n\tReady, aim… MORE POWDER. All enemies take Xd10 bludgeoning and Xd10 fire damage.\n\nSkid's Remedy\n\tDon't whine, it's good for you. All allies heal 2*Xd6 hit points.",
+            "Description": "When you take this Hero Action, raise your Crew Counter by 1, then activate one of the Crew Specialties listed below. Then, if the Specialty activated is different from the one you activated last turn, raise the Crew Counter again.",
             "Pool": {
                 "Type": "Counter",
                 "Name":"Crew Counter",
                 "Min": 0
-            }
+            },
+            "SubOptions": [
+                {
+                    "Name": "Hillary's Hustle",
+                    "Description": "Hop to it, and quick! Your allies gain X times 5 feet of movement speed on their next turn."
+                },
+                {
+                    "Name": "Hognath's Barrage",
+                    "Description": "Ready, aim… MORE POWDER. All enemies take Xd10 bludgeoning and Xd10 fire damage."
+                },
+                {
+                    "Name": "Skid's Remedy",
+                    "Description": "Don't whine, it's good for you. All allies heal 2*Xd6 hit points."
+                }
+            ]
         }
     ],
     "Apex": {
